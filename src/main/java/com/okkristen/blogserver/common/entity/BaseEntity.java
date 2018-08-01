@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public class BaseEntity implements Serializable{
 
     private static final long serialVersionUID = 7988377299341530426L;
 
@@ -59,5 +59,35 @@ public class BaseEntity implements Serializable {
 
     public void setDr(Integer dr) {
         this.dr = dr;
+    }
+    @Override
+    public boolean equals(Object obj) {
+
+        if (null == obj) {
+            return false;
+        }
+
+        if (this == obj) {
+            return true;
+        }
+
+        if (!getClass().equals(obj.getClass())) {
+            return false;
+        }
+
+        BaseEntity that = (BaseEntity) obj;
+
+        return null == this.getId() ? false : this.getId().equals(that.getId());
+    }
+
+
+    @Override
+    public int hashCode() {
+
+        int hashCode = 17;
+
+        hashCode += null == getId() ? 0 : getId().hashCode() * 31;
+
+        return hashCode;
     }
 }
