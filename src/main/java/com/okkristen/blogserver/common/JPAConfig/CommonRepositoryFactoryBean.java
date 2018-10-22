@@ -32,13 +32,10 @@ public class CommonRepositoryFactoryBean<R extends JpaRepository<T, Serializable
                     return new SimpleJpaRepository(domainClass, entityManager);
                 }
             }
-
             @Override
             protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
                 return metadata.getDomainType().isAssignableFrom(BaseEntity.class) ? CommonRepositoryImpl.class : SimpleJpaRepository.class;
             }
-
-
         };
     }
 }

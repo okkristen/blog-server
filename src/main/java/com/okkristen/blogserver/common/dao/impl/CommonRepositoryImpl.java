@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -23,7 +24,6 @@ import java.util.Optional;
  * @param <E>
  * @param <ID>
  */
-@Transactional
 public  class CommonRepositoryImpl<E extends BaseEntity, ID extends Serializable>  extends SimpleJpaRepository<E, Serializable>
         implements CommonRepository<E, ID> {
 

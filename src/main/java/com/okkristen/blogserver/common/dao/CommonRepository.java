@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.query.QueryByExampleExecutor;
+import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,8 +18,7 @@ import java.util.List;
  */
 @NoRepositoryBean
 public interface CommonRepository<E, ID extends Serializable> extends
-        CrudRepository<E, Serializable>/* JpaRepository<T, Serializable> */, JpaSpecificationExecutor<E>{
-
+        CrudRepository<E, Serializable>, JpaRepository<E, Serializable> , JpaSpecificationExecutor<E>{
 
 }
 

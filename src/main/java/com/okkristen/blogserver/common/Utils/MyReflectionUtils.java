@@ -1,4 +1,4 @@
-package com.okkristen.blogserver.common.service.impl;
+package com.okkristen.blogserver.common.Utils;
 
 /**
  * 基于JDK反射类
